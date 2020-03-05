@@ -7,6 +7,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
 #membaca file csv
 df = pd.read_csv("german_credit_data.csv", delimiter=",")
@@ -65,7 +66,6 @@ def kals(xtr,xts,ytr,yts):
         y_pred = klasifikasi.predict(x_test)
         y_pred
         klasifikasi.predict_proba(x_test)
-        from sklearn.metrics import accuracy_score
         accuracy= accuracy_score(y_test, y_pred)
         eror_rate.append(accuracy)
     # dibuatkan data dict agar mudah untuk mencari nilai max
